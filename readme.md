@@ -29,7 +29,7 @@
     ```
     Thêm config security
 
-3. Yêu cầu login khi truy cập trang /swagger-ui.
+3. Yêu cầu login khi truy cập trang /swagger-ui.html
 
     ```@Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -53,4 +53,4 @@
                 .roles("USER");
     }
     ```
-    Sử dụng spring security để authen in m
+    Sử dụng spring security để authen in memory
