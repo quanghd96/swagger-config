@@ -1,18 +1,18 @@
 Config swagger
 1. Hiển thị cấu trúc các response
 
-    `@PostMapping("insert")
+    ```@PostMapping("insert")
     public ResponseEntity<UserLogin> insertUser(@RequestBody HashMap<String, String> body, HttpServletRequest request) {
         String token = request.getHeader(AUTHORIZATION);
         System.out.println(token);
         return new ResponseEntity<>(new UserLogin("quangdn", "quangdn@arrow-tech.vn", "snncklascnkslncaklsn"), HttpStatus.OK);
-    }`
-    
+    }
+    ```
     Cần thêm object trả về sau ResponsEntity
 
 2. Nhập token vào header cho các request
 
-    `@Bean
+    ```@Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
@@ -25,11 +25,13 @@ Config swagger
 
     private ApiKey apiKey() {
         return new ApiKey(AUTHORIZATION, AUTHORIZATION, "header");
-    }`
+    }
+    ```
+    Thêm config securit
 
 3. Yêu cầu login khi truy cập trang /swagger-ui.
 
-    `@Override
+    ```@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf()
@@ -49,4 +51,6 @@ Config swagger
                 .withUser("admin")
                 .password("admin")
                 .roles("USER");
-    }`
+    }
+    ```
+    Sử dụng spring security để authen in memory
