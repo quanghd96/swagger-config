@@ -8,7 +8,7 @@ Config swagger
         return new ResponseEntity<>(new UserLogin("quangdn", "quangdn@arrow-tech.vn", "snncklascnkslncaklsn"), HttpStatus.OK);
     }
     ```
-    Cần thêm object trả về sau ResponsEntity
+    Cần thêm object trả về sau ResponseEntity
 
 2. Nhập token vào header cho các request
 
@@ -27,7 +27,7 @@ Config swagger
         return new ApiKey(AUTHORIZATION, AUTHORIZATION, "header");
     }
     ```
-    Thêm config securit
+    Thêm config security
 
 3. Yêu cầu login khi truy cập trang /swagger-ui.
 
