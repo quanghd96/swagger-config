@@ -27,7 +27,7 @@
         return new ApiKey(AUTHORIZATION, AUTHORIZATION, "header");
     }
     ```
-    Thêm config security
+    Thêm config securitySchemes
 
 3. Yêu cầu login khi truy cập trang /swagger-ui.html
 
